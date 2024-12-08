@@ -9,7 +9,6 @@ fun main() {
     agoToText(172800)
 
 
-
 }
 
 fun agoToText(secondsAgo: Int) {
@@ -34,12 +33,13 @@ fun endWordsHelper(secondsAgo: Int): String {
 
     if (secondsAgo <= 3600) {
         var seconds = secondsAgo / 60
-        if (seconds.toString()[seconds.toString().length - 1].digitToInt() == 1 && seconds <= 51)
-            return "минуту"
-        else if (minutsAgo.any() { it == seconds && seconds <= 54 })
+
+        if (minutsAgo.any() { it == seconds && seconds <= 54 })
             return "минуты"
         else if (minutAgo.any() { it == seconds && seconds <= 59 || seconds % 10 == 0 })
             return "минут"
+        else if (seconds.toString()[seconds.toString().length - 1].digitToInt() == 1 && seconds <= 51)
+            return "минуту"
     } else if (secondsAgo > 3600) {
         var hours = secondsAgo / 3600
         if (hourAgo.any() { it == (hours) })
